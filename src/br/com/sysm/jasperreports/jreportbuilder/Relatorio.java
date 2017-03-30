@@ -17,7 +17,7 @@ public class Relatorio implements Serializable {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int codigo;
 
-	private byte ativo;
+	private boolean ativo = true;
 
 	private String descricao;
 
@@ -35,11 +35,11 @@ public class Relatorio implements Serializable {
 		this.codigo = codigo;
 	}
 
-	public byte getAtivo() {
+	public boolean getAtivo() {
 		return this.ativo;
 	}
 
-	public void setAtivo(byte ativo) {
+	public void setAtivo(boolean ativo) {
 		this.ativo = ativo;
 	}
 

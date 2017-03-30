@@ -9,11 +9,30 @@
 <title>JReportBuilder by SysM</title>
 </h:head>
 <h:body>
-	<h2>Relatórios cadastrrados</h2>
+	<h2>Relatórios cadastrados</h2>
 	<h:form>
-		<h:dataTable>
-			
+		<h:dataTable border="1" var="item" value="#{relatorioControl.relatorios}">
+			<h:column>
+				<f:facet name="header">
+					Codigo
+				</f:facet>
+				#{item.codigo}
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					Descrição
+				</f:facet>
+				#{item.descricao}
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					Ativo ?
+				</f:facet>
+				<h:outputText value="Sim" rendered="#{item.ativo}"/>
+				<h:outputText value="Não" rendered="#{!item.ativo}"/>
+			</h:column>
 		</h:dataTable>
+		<h:commandButton value="Cadastrar" action="#{relatorioControl.doStartNovo}"></h:commandButton>
 	</h:form>
 </h:body>
 </html>
