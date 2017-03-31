@@ -14,5 +14,8 @@
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="org.eclipse.datatools.connectivity.jdt.DRIVERLIBRARY/MySQL JDBC Driver"/>
+	<classpathentry kind="lib" path="C:/Users/KB-01/Documents/Java/Servers/glassfish-4.1/glassfish4/glassfish/lib/jasperreports-5.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/KB-01/Documents/Java/Servers/glassfish-4.1/glassfish4/glassfish/lib/jasperreports-fonts-5.2.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/KB-01/Documents/Java/Servers/glassfish-4.1/glassfish4/glassfish/lib/jasperreports-javaflow-5.2.0.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
