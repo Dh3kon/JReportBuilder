@@ -10,9 +10,29 @@
 </h:head>
 <h:body>
 	<h2>Novo Relatório </h2>
-	<h:form>
+	<h:form enctype="multipart/form-data">
+		<table>
+			<tr>
+				<td>Ativo</td>
+				<td>
+					 <h:selectBooleanCheckbox value="#{relatorioControl.selectedRelatorio.ativo}"></h:selectBooleanCheckbox>
+				</td>
+			</tr>
+			<tr>
+				<td>Descrição</td>
+				<td>
+					<h:inputText value="#{relatorioControl.selectedRelatorio.descricao}" required="true"></h:inputText>
+				</td>
+			</tr>
+			<tr>
+				<td>Layout</td>
+				<td>
+					<h:inputFile id="file" value="#{relatorioControl.arquivoLayout}" required="true"/>
+				</td>
+			</tr>
+		</table><br/>
 		<h:commandButton value="Salvar" action="#{relatorioControl.doFinishNovo}"></h:commandButton>
-		<h:commandButton value="Cancelar" action="#{relatorioControl.doCancelar}"></h:commandButton>
+		<h:commandButton value="Cancelar" immediate="true" action="#{relatorioControl.doCancelar}"></h:commandButton>
 	</h:form>
 </h:body>
 </html>

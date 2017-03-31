@@ -1,5 +1,9 @@
 package br.com.sysm.jasperreports.jreportbuilder.service;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.EJB;
@@ -18,6 +22,8 @@ public class RelatorioService {
 
 	@EJB
     private RelatorioRepository repository;
+	private ArrayList<String> completedSubReports = new ArrayList<String>(30);
+	private Throwable subReportException = null;
     public RelatorioService() {
     }
 
@@ -36,6 +42,14 @@ public class RelatorioService {
     public List<Relatorio> getRelatorios() {
     	return repository.getRelatorios();
     }
+    
+    public byte[] executarRelatorio(Relatorio rel) throws Exception {
+    	Class.forName("com.mysql.jdbc.Driver");
+    	Connection mySQLConnection = DriverManager.getConnection("jdbc:mysql//localhost:3306/jasperrepots", "jasper", "jasper");
+    	
+    }
+    
+    private
     
     
 }

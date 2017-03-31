@@ -1,5 +1,6 @@
 package br.com.sysm.jasperreports.jreportbuilder.control;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
 
@@ -36,7 +37,15 @@ public class RelatorioControl implements Serializable {
 		return "/index.faces";
 	}
 	
-	public String doFinishNovo() {
+	public void doExecutarRelatorio(Relatorio rel) throws Exception {
+		byte[] arqResultado = relatorioService.executarRelatorio(rel);
+	}
+	
+	public String doFinishNovo() throws IOException {
+		byte[] arqByte = new byte [(int) arquivoLayout.getSize()];
+		arquivoLayout.getInputStream().read(arqByte);
+		getSelectedRelatorio().setRelatorio(arqByte);
+		relatorioService.persistRelatorio(getSelectedRelatorio());
 		return "/index.faces";
 	}
 

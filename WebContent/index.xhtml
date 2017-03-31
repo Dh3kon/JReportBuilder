@@ -31,7 +31,13 @@
 				<h:outputText value="Sim" rendered="#{item.ativo}"/>
 				<h:outputText value="Não" rendered="#{!item.ativo}"/>
 			</h:column>
-		</h:dataTable>
+			<h:column>
+					<f:facet name="header">
+						Ações
+					</f:facet>
+				<h:commandLink value="Imprimir" action="#{relatorioControl.doExecutarRelatorio(item)}"></h:commandLink>
+				</h:column>
+		</h:dataTable><br/>
 		<h:commandButton value="Cadastrar" action="#{relatorioControl.doStartNovo}"></h:commandButton>
 	</h:form>
 </h:body>
